@@ -52,3 +52,13 @@ print("\n" + "=" * 50)
 print("Exploration terminée !")
 print("Prochain lab : entraîner un modèle ML")
 print("=" * 50)
+
+
+
+# ===== NOMBRE DE PATIENTS PAR SEXE ET DIAGNOSTIC =====
+print("\n--- Nombre de patients par sexe et diagnostic ---")
+
+grouped = df.groupby(["sexe", "diagnostic"]).size()
+
+for (sexe, diag), count in grouped.items():
+    print(f"Sexe: {sexe} | Diagnostic: {diag} -> {count} patients")
